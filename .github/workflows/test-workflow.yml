@@ -16,6 +16,6 @@ jobs:
       - run: ./gradlew integTest
       - name: Publish Test Report
         uses: EnricoMi/publish-unit-test-result-action@v2
-        if: success() || failure() # always run even if the previous step fails
+        if: always() # always run even if the previous step fails
         with:
             files: '**/build/test-results/test/TEST-*.xml'
