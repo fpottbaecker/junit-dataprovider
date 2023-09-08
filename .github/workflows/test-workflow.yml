@@ -12,8 +12,8 @@ jobs:
             distribution: 'temurin'
             java-version: '8'
             cache: 'gradle'
-      - run: ./gradlew clean test
-      - run: ./gradlew integTest
+      - run: ./gradlew clean test --no-daemon
+      - run: ./gradlew integTest --no-daemon
       - name: Publish Test Report
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always() # always run even if the previous step fails
